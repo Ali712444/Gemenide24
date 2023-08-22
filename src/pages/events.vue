@@ -1,11 +1,16 @@
 <template>
     <div>
+
       <div class="text-white text-h2 q-pt-xl q-pb-lg q-pl-xl text-weight-medium ">
         Events
       </div>
-      <div class="row q-pl-xl">
-        <card :carddata="carddata"/>
-      </div>
+      <q-scroll-area style="height: 700px; max-width: 100%;">
+        <div  class="q-py-xs">
+          <div class="row q-pl-xl q-pt-xl">
+            <card :carddata="carddata"/>
+          </div>
+        </div>
+      </q-scroll-area>
     </div>
 </template>
 
@@ -31,8 +36,23 @@ export default {
           heading:'Be careful when disposing of hot ashes in the residual waste Wed 16-08-2023',
           para:'Ashes can be disposed of with household waste...Continue reading',
         },
-        
-       
+        {
+          src:'images/imgg.png',
+          heading:'Be careful when disposing of hot ashes in the residual waste Wed 16-08-2023',
+          para:'Ashes can be disposed of with household waste...Continue reading',
+        },
+        {
+          src:'images/imgg.png',
+          heading:'Be careful when disposing of hot ashes in the residual waste Wed 16-08-2023',
+          para:'Ashes can be disposed of with household waste...Continue reading',
+        },
+        {
+          src:'images/imgg.png',
+          heading:'Be careful when disposing of hot ashes in the residual waste Wed 16-08-2023',
+          para:'Ashes can be disposed of with household waste...Continue reading',
+        },
+
+
       ]
 
     }

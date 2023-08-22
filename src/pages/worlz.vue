@@ -3,7 +3,7 @@
     <div style="background-color: #454545">
       <div class="row q-pl-xl q-py-xl">
         <div style="padding-right: 300px" class="col-6">
-          <div class="text-white text-h2 text-weight-medium">news</div>
+          <div class="text-white text-h2 text-weight-medium">News</div>
           <div
             style="font-size: 32px; line-height: 36px"
             class="bg-white text-black q-mt-lg q-px-xl q-py-lg text-weight-light"

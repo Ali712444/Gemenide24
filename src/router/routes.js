@@ -10,6 +10,8 @@ const routes = [
       { path: 'events', component: () => import('pages/events.vue') },
       { path: 'newspaper', component: () => import('pages/newspaper.vue') },
       { path: 'noticeboard', component: () => import('pages/noticeboard.vue') },
+      { path: 'detailpage', component: () => import('pages/detailpage.vue') },
+      { path: 'pdf', component: () => import('pages/pdf.vue') },
     ]
   },
 
