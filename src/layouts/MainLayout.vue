@@ -1,33 +1,34 @@
 <template>
   <div class="row">
-    <div class="col-10">
+    <div style="width:1536px;" class="col-10">
       <div
-        class="q-py-xl text-weight-bold text-h3 q-pl-xl"
-        style="color: #454545"
+        class="q-pt-lg q-pb-xl text-weight-bolder"
+        style="color: #454545;font-size: 45px; padding-left: 64px; height: 152px"
       >
-        UPPER WÖLZ
+        OBERWÖLZ
       </div>
       <div style="background-color: #454545;">
         <q-layout view="lHh Lpr lFf">
           <q-page-container>
-            <router-view />
+            <router-view/>
           </q-page-container>
         </q-layout>
       </div>
     </div>
     <div class="col-2">
-      <button1 :btns="btns5" />
+      <button1 :btns="btns5"/>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import {defineComponent, ref} from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import button1 from "components/button1.vue";
 
 const linksList = [
   {
+
     title: "Docs",
     caption: "quasar.dev",
     icon: "school",
@@ -84,39 +85,34 @@ export default defineComponent({
     return {
       btns5: [
         {
-          to:'../worlz',
-          icon: "home",
-          label: "Home",
-          style:
-            " font-size: 28px;line-height: 66px;width: 300px;color: white;background: linear-gradient(180deg, #76b500 0, #6fab00); padding-top:50px;padding-bottom:50px;",
+          class: ' aaa text-capitalize text-weight-bold  ',
+          to: '../worlz',
+          icon: "img:/images/Home.svg",
+          label: "Home page",
         },
         {
-           to:'../news',
-          icon: "campaign",
-          label: "News",
-          style:
-            " font-size: 28px;line-height: 66px;width: 300px;color: white;background: linear-gradient(180deg, #76b500 0, #6fab00); padding-top:50px;padding-bottom:50px;",
+          class: ' aaa text-capitalize text-weight-bold',
+          to: '../news',
+          icon: "img:/images/speaker2.svg",
+          label: "News"
         },
         {
-           to:'../events',
-          icon: "calendar_month",
+          class: ' aaa text-capitalize text-weight-bold',
+          to: '../events',
+          icon: "img:/images/calander2.svg",
           label: "Events",
-          style:
-            " font-size: 28px;line-height: 76px;width: 300px;color: white;background: linear-gradient(180deg, #76b500 0, #6fab00); padding-top:50px;padding-bottom:50px;",
         },
         {
-           to:'../newspaper',
-          icon: "photo_camera",
+          class: ' aaa text-capitalize text-weight-bold',
+          to: '../newspaper',
+          icon: "img:/images/aaa2.svg",
           label: "NewsPaper",
-          style:
-            " font-size: 28px;line-height: 66px;width: 300px;color: white;background: linear-gradient(180deg, #76b500 0, #6fab00); padding-top:50px;padding-bottom:50px;",
         },
         {
-           to:'../noticeboard',
-          icon: "foundation",
+          class: ' aaa text-capitalize text-weight-bold',
+          to: '../noticeboard',
+          icon: "img:/images/bbb2.svg",
           label: "Notice Board",
-          style:
-            " font-size: 28px;line-height: 66px;width: 300px;color: white;background: linear-gradient(180deg, #76b500 0, #6fab00); padding-top:50px;padding-bottom:50px;",
         },
       ],
 
@@ -129,3 +125,21 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.aaa {
+  border: 1px solid #198653;
+  font-size: 25px;
+  line-height: 66px;
+  color: white;
+  background: linear-gradient(180deg, #76b500 0, #6fab00);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 384px;
+  height: 211;
+
+}
+</style>
+
+
+

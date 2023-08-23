@@ -1,4 +1,100 @@
 // app global css in SCSS form
-body{
-   width: 1920px; 
+@mixin apply-map($prefix, $property, $map) {
+  @each $size, $val in $map {
+    .#{$prefix}-#{$size} {
+      #{$property}: $val;
+    }
+  }
 }
+
+@mixin apply-fonts($prefix,$postfix, $property1,$property2,$property3, $map) {
+  @each $size, $val in $map {
+    .#{$prefix}-#{$size}#{$postfix} {
+      #{$property1}: map-get($val, font);
+      #{$property2}: map-get($val, LineHeight);
+      #{$property3}: map-get($val, LetterSpacing);
+    }
+  }
+}
+
+
+//===========================Font Size===========================//
+$font-size-map: (
+  "10" : (font:0.625rem, LineHeight: 22px, LetterSpacing: -0.15px),
+  "12" : (font:0.75rem, LineHeight: 22px, LetterSpacing: -0.15px),
+  "14" : (font:0.875rem, LineHeight: 22px, LetterSpacing: -0.15px),
+  "16" : (font:1rem, LineHeight: 23px, LetterSpacing: -0.15px),
+  "18" : (font:1.125rem !important, LineHeight: 24px, LetterSpacing: 0.15px),
+  "20" : (font:1.25rem, LineHeight: 26px, LetterSpacing: 0.65px),
+  "22" : (font:1.375rem, LineHeight: 33.5px, LetterSpacing: 0.45px),
+  "24" : (font:1.5rem, LineHeight: 40px, LetterSpacing: 0.15px),
+  "26" : (font:1.625rem, LineHeight: 40px, LetterSpacing: 0.15px),
+  "27" : (font:1.6875rem, LineHeight: 40px, LetterSpacing: 0.15px),
+  "28" : (font:28px, LineHeight: 48px, LetterSpacing: 0.15px),
+  "30" : (font:1.875rem, LineHeight: 43px, LetterSpacing: 0.15px),
+  "33" : (font:2.0625rem, LineHeight: 46px, LetterSpacing: 0.15px),
+  "35" : (font:2.1875rem, LineHeight: 48px, LetterSpacing: 0.15px),
+  "36" : (font:2.25rem, LineHeight: 36px, LetterSpacing: -0.35px),
+  "40" : (font:2.5rem, LineHeight: 48px, LetterSpacing: -0.35px),
+  "42" : (font:2.625rem, LineHeight: 56px, LetterSpacing: 0.15px),
+  "43" : (font:2.6875rem, LineHeight: 56px, LetterSpacing: 0.15px),
+  "44" : (font:2.75rem, LineHeight: 42.5px, LetterSpacing: 0.65px),
+  "48" : (font:48px, LineHeight: 42.5px, LetterSpacing: 0.65px),
+  "56" : (font:56px, LineHeight: 68px, LetterSpacing: 0.15px),
+  "58" : (font:3.625rem, LineHeight: 56px, LetterSpacing: 0.15px),
+  "60" : (font:3.75rem, LineHeight: 56px, LetterSpacing: 0.15px),
+  "64" : (font:4rem, LineHeight: 56px, LetterSpacing: 0.15px),
+);
+@include apply-fonts('font-size', ' ', 'font-size', 'line-height', 'letter-spacing', $font-size-map);
+
+$font-weight-map: ('0': 0, '400': 400, '500': 500, '600': 600, '700': 700 !important);
+@include apply-map('font-weight', 'font-weight', $font-weight-map);
+//===========================Margin Classes===========================//
+$margin-top: ('78pe':7.8%, '8pe':8%, '11pe':11%, '4pe': 4%, '3pe': 3%, '9pe':9%, '85pe':8.5% !important, '6':6px, '2':2px, '13pe':13%, '18':18px, '10':10px, '12':12px, '20':20px, '36':36px, '44':44px, '58':58px, '90':90px, '92':92px, '93':93px, '105':105px, '108':108px, '144':144px, '268':268px, '171':171px, '190':190px);
+@include apply-map('mt', 'margin-top', $margin-top); // Margin Top
+
+$margin-bottom: ('1pe':1%, '-2': -2px, '10pe':10%, '20pe':20%, '50pe':50% !important, '5pe': 5%, '8pe':8%, '11pe':11%, '-1':-1px, '10':10px, '18':18px, '20':20px, '30':30px, '58':58px, '72': 72px, '104':104px, '120':120px, '185':185px, '245':245px !important);
+@include apply-map('mb', 'margin-bottom', $margin-bottom); // Margin bottom
+
+$margin-left: ('16pe':16%, '10pe':10%, '5pe' :5%, '9pe':9.2%, '20':20px !important, '27':27px, '32':32px, '30':30px, '60':60px, '158':158px);
+@include apply-map('ml', 'margin-left', $margin-left); // Margin Left
+
+$margin-right: ('18pe':18.5%, '6':6px, '35':35px !important);
+@include apply-map('mr', 'margin-right', $margin-right); // Margin Right
+
+$margin-map: ('20':0px 20px 0px 20px, '30':0px 30px 0px 30px !important, '32':0px 32px 0px 32px, '55':0px 55px 0px 55px, '77':0px 77px 0px 77px); // top + right + bottom + left  //q-mx-value
+@include apply-map('q-mx', 'margin', $margin-map); // Margin X-axis
+
+$margin-map: ('10':10px 0px 10px 0px, '18':18px 0px 18px 0px, '20':20px 0px 20px 0px, '32':32px 0px 32px 0px, '40':40px 0px 40px 0px, '58':58px 0px 58px 0px); // top + right + bottom + left  //q-my-value
+@include apply-map('q-my', 'margin', $margin-map); // Margin Y-axis
+
+$margin-auto: ('auto':auto, '20':20px);
+@include apply-map('m', 'margin', $margin-auto); // Margin All
+//===========================Padding Classes===========================//
+$padding-map: ('5pe':0% 5% 0% 5%, '10':0px 10px 0px 10px !important, '13':0px 13px 0px 13px, '20':0px 20px 0px 20px, '22':0px 22px 0px 22px, '30':0px 30px 0px 30px, '32':0px 32px 0px 32px, '38':0px 38px 0px 38px, '40':0px 40px 0px 40px,'53':0px 53px 0px 53px, '65':0px 65px 0px 65px, '81':0px 81px 0px 81px, '77':0px 77px 0px 77px, '125':0px 125px 0px 125px, '136':0px 136px 0px 136px); // top + right + bottom + left  //q-px-value
+@include apply-map('q-px', 'padding', $padding-map); // Padding X-axis
+
+$padding-map: ('3':3px 0px 3px 0px, '10':10px 0px 10px 0px, '14':14px 0px 14px 0px, '20':20px 0px 20px 0px !important, '30':30px 0px 30px 0px, '43':43px 0px 43px 0px, '157':157px 0px 157px 0px); // top + right + bottom + left  //q-py-value
+@include apply-map('q-py', 'padding', $padding-map); // Padding Y-axis
+
+$padding-map: ('1':2px, '8-4': 8% 4% 8% 4%, '8-10': 8% 10% 8% 10%, '8-20': 8px 20px, '20-20': 20% 0% 20% 4%, '20-10': 20% 0% 10% 4%, '30' :30px 30px 22px 30px, '12':11px, '32':32px, '20':20px);
+@include apply-map('q-pa', 'padding', $padding-map); // Padding All
+
+
+$padding-top: ('3':3px, '2':2px, '12px':12px !important, '10':10px, '11':11px, '12':12px, '22':22px, '20':20px, '242':242px, '124': 124px, '100': 100px);
+@include apply-map('q-pt', 'padding-top', $padding-top); // Padding Top
+
+$padding-bottom: ('12':12px, '30':30px, '80':80px, '333':333px);
+@include apply-map('q-pb', 'padding-bottom', $padding-bottom); // Padding Bottom
+
+$padding-left: ('12':12px, '20':20px, '30':30px, '32':32px, '38':38px, '40':40px, '62':62px, '87':87px, '93':93px, '99':99px);
+@include apply-map('q-pl', 'padding-left', $padding-left); // Padding Left
+
+$padding-right: ('10':10px, '35':35px, '39':39px,'60':60px,'300':300px);
+@include apply-map('q-pr', 'padding-right', $padding-right); // Padding Right
+body{
+   width: 1920px;
+  height: 971px;
+  font-family: arial,sans-serif;
+}
+

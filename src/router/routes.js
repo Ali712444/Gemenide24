@@ -12,6 +12,8 @@ const routes = [
       { path: 'noticeboard', component: () => import('pages/noticeboard.vue') },
       { path: 'detailpage', component: () => import('pages/detailpage.vue') },
       { path: 'pdf', component: () => import('pages/pdf.vue') },
+      { path: 'sass', component: () => import('pages/sass.vue') },
+
     ]
   },
 
